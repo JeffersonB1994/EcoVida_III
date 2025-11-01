@@ -1,0 +1,29 @@
+<section>
+  <h2>Faça Parte da Mudança</h2>
+  <p>Preencha o formulário para se cadastrar como voluntário ou doador.</p>
+
+  <form id="cadastroForm">
+    <div class="form-group">
+      <input type="text" id="nome" placeholder="Nome completo" required>
+      <p class="error" id="nomeError">Nome é obrigatório.</p>
+    </div>
+
+    <div class="form-group">
+      <input type="email" id="email" placeholder="E-mail" required>
+      <p class="error" id="emailError">E-mail inválido.</p>
+    </div>
+
+    <div class="form-group">
+      <select id="tipo" required>
+        <option value="">Escolha uma opção</option>
+        <option value="voluntario">Voluntário</option>
+        <option value="doador">Doador</option>
+      </select>
+      <p class="error" id="tipoError">Selecione uma opção.</p>
+    </div>
+
+    <button type="submit">Enviar Cadastro</button>
+  </form>
+
+  <div id="formResult"></div>
+</section>
