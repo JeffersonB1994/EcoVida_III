@@ -4,26 +4,23 @@
     <p>Preencha o formulário para se cadastrar como voluntário ou doador.</p>
 
     <form id="cadastroForm">
-      <div class="field">
-        <label for="nome">Nome completo</label>
+      <div class="form-group">
         <input type="text" id="nome" placeholder="Nome completo" required>
-        <span id="nomeError" class="error">Nome é obrigatório.</span>
+        <p class="error" id="nomeError">Nome é obrigatório.</p>
       </div>
 
-      <div class="field">
-        <label for="email">E-mail</label>
+      <div class="form-group">
         <input type="email" id="email" placeholder="E-mail" required>
-        <span id="emailError" class="error">E-mail inválido.</span>
+        <p class="error" id="emailError">E-mail inválido.</p>
       </div>
 
-      <div class="field">
-        <label for="tipo">Tipo de participação</label>
+      <div class="form-group">
         <select id="tipo" required>
           <option value="">Escolha uma opção</option>
           <option value="voluntario">Voluntário</option>
           <option value="doador">Doador</option>
         </select>
-        <span id="tipoError" class="error">Selecione uma opção.</span>
+        <p class="error" id="tipoError">Selecione uma opção.</p>
       </div>
 
       <button type="submit">Enviar Cadastro</button>
