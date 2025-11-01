@@ -1,3 +1,4 @@
+// js/spa.js
 import { templates } from './templates.js';
 
 const content = document.getElementById('content');
@@ -8,17 +9,17 @@ export async function loadPage(page) {
     content.innerHTML = html;
     history.pushState({ page }, '', `#${page}`);
 
+    // Carrega formulário apenas na página de cadastros
     if (page === 'cadastros') {
-      const script = document.createElement('script');
-      script.src = 'js/form.js';
-      script.type = 'module';
-      document.body.appendChild(script);
+      import('./form.js');
     }
   } catch (err) {
-    content.innerHTML = '<h3>Página não encontrada</h3>';
+    console.error(err);
+    content.innerHTML = '<h3 style="text-align:center; padding:2rem; background:#fff; border-radius:8px;">Página não encontrada</h3>';
   }
 }
 
+// Navegação
 document.addEventListener('click', e => {
   const link = e.target.closest('[data-page]');
   if (link) {
@@ -27,6 +28,7 @@ document.addEventListener('click', e => {
   }
 });
 
+// Inicialização
 window.addEventListener('DOMContentLoaded', () => {
   const page = window.location.hash.slice(1) || 'inicio';
   loadPage(page);
